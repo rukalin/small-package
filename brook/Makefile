@@ -20,7 +20,6 @@ PKG_LICENSE:=GPL-3.0
 PKG_LICENSE_FILES:=LICENSE
 
 PKG_BUILD_DEPENDS:=golang/host
-PKG_BUILD_DEPENDS += BROOK_COMPRESS_UPX:upx/host
 PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
 
@@ -56,6 +55,7 @@ define Package/brook/config
 
 	config BROOK_COMPRESS_UPX
 		bool "Compress executable files with UPX"
+		depends on @!mips64
 		default y
 endef
 

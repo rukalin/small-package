@@ -23,7 +23,6 @@ PKG_CONFIG_DEPENDS:= \
 	CONFIG_V2RAY_CTL_COMPRESS_UPX
 
 PKG_BUILD_DEPENDS:=golang/host
-PKG_BUILD_DEPENDS += (V2RAY_CORE_COMPRESS_UPX||V2RAY_CTL_COMPRESS_UPX):upx/host
 PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
 
@@ -105,6 +104,7 @@ config V2RAY_CORE_COMPRESS_GOPROXY
 
 config V2RAY_CORE_COMPRESS_UPX
 	bool "Compress executable files with UPX"
+	depends on @!mips64
 	default y
 endmenu
 endef
@@ -119,6 +119,7 @@ config V2RAY_CTL_COMPRESS_GOPROXY
 
 config V2RAY_CTL_COMPRESS_UPX
 	bool "Compress executable files with UPX"
+	depends on @!mips64
 	default y
 endmenu
 endef

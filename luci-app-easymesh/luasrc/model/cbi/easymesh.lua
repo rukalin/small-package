@@ -51,6 +51,7 @@ uci:foreach("wireless", "wifi-device",
 							function(s)
 								apRadio:value(s['.name'])
 							end)
+apRadio:value("all", translate("ALL"))
 o.default = "radio0"
 o.rmempty = false
 
@@ -66,6 +67,26 @@ enable.rmempty = false
 o = s:option(Value, "key", translate("Key"))
 o.default = "easymesh"
 o:depends("encryption", 1)
+
+---- kvr
+enable = s:option(Flag, "kvr", translate("K/V/R"), translate(""))
+enable.default = 1
+enable.rmempty = false
+
+o = s:option(Value, "mobility_domain", translate("Mobility Domain"), translate("4-character hexadecimal ID"))
+o.default = "4f57"
+o.datatype = "and(hexstring,rangelength(4,4))"
+o:depends("kvr", 1)
+
+o = s:option(Value, "rssi_val", translate("Threshold for an good RSSI"))
+o.default = "-60"
+o.atatype = "range(-1,-120)"
+o:depends("kvr", 1)
+
+o = s:option(Value, "low_rssi_val", translate("Threshold for an bad RSSI"))
+o.default = "-88"
+o.atatype = "range(-1,-120)"
+o:depends("kvr", 1)
 
 ---- ap_mode
 enable = s:option(Flag, "ap_mode", translate("AP MODE Enable"), translate("Enable or disable AP MODE"))

@@ -18,7 +18,6 @@ PKG_CONFIG_DEPENDS:= \
 	CONFIG_HYSTERIA_COMPRESS_UPX
 
 PKG_BUILD_DEPENDS:=golang/host
-PKG_BUILD_DEPENDS += HYSTERIA_COMPRESS_UPX:upx/host
 PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
 
@@ -51,6 +50,7 @@ config HYSTERIA_COMPRESS_GOPROXY
 
 config HYSTERIA_COMPRESS_UPX
 	bool "Compress executable files with UPX"
+	depends on @!mips64
 	default y
 
 endmenu

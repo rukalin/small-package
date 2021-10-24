@@ -64,7 +64,6 @@ git clone --depth 1 https://github.com/gdck/luci-app-cupsd cupsd1 && mv -n cupsd
 git clone --depth 1 https://github.com/kenzok78/luci-app-netspeedtest
 git clone --depth 1 https://github.com/kenzok78/udp2raw
 git clone --depth 1 https://github.com/kenzok78/luci-theme-argonne.git
-git clone --depth 1 https://github.com/kuoruan/openwrt-upx.git
 
 svn co https://github.com/Lienol/openwrt/trunk/package/lean/luci-app-autoreboot
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
@@ -88,6 +87,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/tcpping
 svn co https://github.com/liuran001/openwrt-theme/trunk/luci-theme-argon-lr
 svn co https://github.com/openwrt/packages/trunk/net/shadowsocks-libev
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-aliddns
+svn co https://github.com/immortalwrt/openwrt-filebrowser/trunk/filebrowser
 svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome
 svn co https://github.com/kenzok8/jell/trunk/adguardhome
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-smartdns
